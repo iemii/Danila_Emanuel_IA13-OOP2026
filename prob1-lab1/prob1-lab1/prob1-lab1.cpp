@@ -2,10 +2,29 @@
 //
 
 #include <iostream>
-
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+    char s[100];
+    int x, i, uc, suma = 0;
+    FILE* fin;
+    errno_t err;
+    err = fopen_s(&fin,"ini.txt","r");
+    while (fgets(s,100,fin))
+    {
+        x = 0;
+        i = 0;
+        while (s[i]!=NULL)
+        {
+            uc = s[i] - '0';
+            x = x * 10 + uc;
+            i = i + 1;
+        }
+        suma = suma + x;
+    }
+    fclose(fin);
+    printf("d", suma);
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
