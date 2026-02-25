@@ -9,7 +9,7 @@ void NumberList::Init()
 bool NumberList::Add(int x)
 {
 	if (this->count < 10)
-		numbers[++count] = x;
+		numbers[count++] = x;
 	else
 		return false;
 	return true;
@@ -28,7 +28,7 @@ void NumberList::Sort()
 			}
 }
 
-void Numberlist::Print()
+void NumberList::Print()
 {
 	int i;
 	for (i = 0; i < this->count; i++)
