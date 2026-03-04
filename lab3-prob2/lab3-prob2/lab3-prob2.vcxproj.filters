@@ -15,21 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab2-prob2.cpp">
+    <ClCompile Include="lab3-prob2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="functii.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="student.cpp">
+    <ClCompile Include="Canvas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functii.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="student.h">
+    <ClInclude Include="Canvas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
