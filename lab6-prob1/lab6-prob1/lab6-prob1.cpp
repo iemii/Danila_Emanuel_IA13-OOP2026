@@ -1,24 +1,27 @@
-// lab3-prob2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// lab6-prob1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "Canvas.h"
 #include <iostream>
-
+#include "Circuit.h"
+#include "BMW.h"
+#include "Volvo.h"
+#include "Fiat.h"
+#include "Seat.h"
+#include "RangeRover.h"
 int main()
 {
-
-    Canvas desen(50, 20);
-
-    desen.DrawRect(2, 2, 15, 8, '#');//un dreptunghi gol
-    desen.FillRect(20, 2, 30, 8, '@');//un dreptunghi plin
-    desen.DrawCircle(10, 14, 5, '*');//un cerc gol
-    desen.FillCircle(30, 14, 4, '%');//un cerc plin
-   // desen.SetPoint(30, 14, '!');
-    desen.DrawLine(40, 2, 48, 18, '/');//linie oblic
-    desen.Print();
-    desen.Clear();
-
-    return 0;
+	Circuit c;
+	c.SetLength(550);
+	c.SetWeather(Weather::Sunny);
+	c.AddCar(new Volvo());
+	c.AddCar(new BMW());
+	c.AddCar(new Seat());
+	c.AddCar(new Fiat());
+	c.AddCar(new RangeRover());
+	c.Race();
+	c.ShowFinalRanks(); // it will print the time each car needed to finish the circuit sorted from the fastest car to the slowest.
+	c.ShowWhoDidNotFinish(); // it is possible that some cars don't have enough fuel to finish the circuit
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

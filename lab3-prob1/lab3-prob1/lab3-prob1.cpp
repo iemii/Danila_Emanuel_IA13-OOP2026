@@ -18,7 +18,7 @@ int main()
 
     std::cout << "Add(5 numere:1,2,3,4,5): " << Math::Add(5, 1, 2, 3, 4, 5) << std::endl;
 
-    const char* s1 = "Hello";
+    const char* s1 = "Hello ";
     const char* s2 = "World!";
     char* s3 = Math::Add(s1, s2);
     if (s3 != nullptr)

@@ -44,7 +44,7 @@ void Canvas::SetPoint(int x, int y, char ch)
 
 void Canvas::DrawLine(int x1, int y1, int x2, int y2, char ch)
 {
-	if (x1 == x2)//linie verticala (pt laturile stanga dreapta la dreptunghi)
+	if (x1 == x2)//laturile stanga dreapta
 	{
 		int startY = std::min(y1, y2);
 		int endY = std::max(y1, y2);
@@ -119,8 +119,13 @@ void Canvas::FillCircle(int x, int y, int ray, char ch)
 	for(int i=0;i<height;i++)
 		for (int j = 0; j < width; j++)
 		{
-			int dist = (i - y) * (i - y)+(j - x) * (j - x);
+			int dist = (i - y) * (i - y) + (j - x) * (j - x);
 			if (dist <= ray * ray)
-				SetPoint(j, i, ch);
+				if (j >= x && i <= y)
+					if(j!=x-ray/2)
+					{
+						SetPoint(j, i, ch);
+						std::cout << j << ' ' << i<<' ';
+					}
 		}
 }
